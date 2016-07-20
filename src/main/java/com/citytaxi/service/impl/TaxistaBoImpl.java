@@ -54,7 +54,6 @@ public class TaxistaBoImpl implements TaxistaBo{
 			}
 		}
 		Local[][] locais = mapa.getLocais();
-//		Local novoLocal = locais[local.getX()][local.getY()];
 		Local novoLocal = locais[local.getY()][local.getX()];
 		if(novoLocal.getStatus().equals(LocalStatus.bloqueada)) {
 			throw new LocalBlockedException("Local bloqueado, escolha outro local");
@@ -63,7 +62,6 @@ public class TaxistaBoImpl implements TaxistaBo{
 		Taxista persistedTasista = taxistaDao.save(taxista);
 		
 		novoLocal.getTaxistas().add(persistedTasista);
-//		locais[local.getX()][local.getY()] = novoLocal;
 		locais[local.getY()][local.getX()] = novoLocal;
 		localBo.update(novoLocal);
 		mapa.setLocais(locais);

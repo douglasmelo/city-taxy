@@ -69,7 +69,6 @@ public class SimulacaoBoImpl implements SimulacaoBo{
 			taxista.setPassageiro(null); //passageiro entregue
 			taxista.setStatus(TaxiStatus.vazio);
 			taxista.getLocaisVisitados().clear();
-//			novoLocalAtual.getPassageiros().remove(passageiro);
 		}
 		
 		//atualizar taxista

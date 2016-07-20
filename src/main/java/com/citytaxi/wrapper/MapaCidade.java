@@ -15,7 +15,6 @@ import com.citytaxi.controller.domain.LocalStatus;
 public class MapaCidade {
 
 	public static Local[][] getMapaCidadeCsv() throws IOException {
-		//File file2 = new File("./src/main/resources/matriz_cidade.csv");
 		createFile();
 		File file2 = new File("matriz_cidade.csv");
 		
