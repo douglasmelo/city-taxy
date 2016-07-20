@@ -50,7 +50,7 @@ public class TaxistaBoImpl implements TaxistaBo{
 				Mapa novoMapa = new Mapa(mapaCidade, local.getTempo() == null ? taxista.getTempo() : local.getTempo());
 				mapa = mapaBo.create(novoMapa);
 			} catch (IOException e) {
-				throw new MapNotFoundException("Mapa não encontrado", e);
+				throw new MapNotFoundException("Mapa n√£o encontrado", e);
 			}
 		}
 		Local[][] locais = mapa.getLocais();

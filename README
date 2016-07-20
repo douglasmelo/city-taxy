@@ -1,0 +1,34 @@
+Repositório remoto:
+https://github.com/douglasmelo/city-taxy.git
+
+A aplicação está hospedada no openshit:
+http://taxi-citytaxi.rhcloud.com/
+
+Exemplos dos endpoints no postman:
+https://www.getpostman.com/collections/f667cf99cfbdbc4d9632
+
+Endpoints:
+http://taxi-citytaxi.rhcloud.com/city-taxi/simulacao/estadoatual
+Criar Taxista:
+http://taxi-citytaxi.rhcloud.com/city-taxi/taxista
+Criar Passageiro:
+http://taxi-citytaxi.rhcloud.com/city-taxi/passageiro
+
+http://taxi-citytaxi.rhcloud.com/city-taxi/simulacao/reiniciar
+http://taxi-citytaxi.rhcloud.com/city-taxi/simulacao/avancar
+
+Taxistas e passageiros tem endopoint seguindo o padrão REST para find/{id}(GET)/create(POST{json})/update/{id}(PUT), 
+por exemplo no caso do taxista com id 1 para encontrar ele é somente passar a url: http://taxi-citytaxi.rhcloud.com/city-taxi/taxista/1 com o método GET, 
+a mesma url pode ser usada para atualizar porém usando o método PUT passando o JSON com o conteúdo correspondente, o mesmo acontece para o criar um taxista porém a 
+url utilizada não contem o id, http://taxi-citytaxi.rhcloud.com/city-taxi/taxista e tem que passar o JSON com o conteúdo.
+
+Premissas assumidas e explicações:
+-O mapa é criado quando um taxista é criado e adicionado ao mapa, a partir desse momento pode criar taxistas e passageiros. Já fica possível visualizar 
+o último mapa no endpoint de estadoatual e assim que for avançando o retorno do endpoint avançar já retorna o próximo mapa com a situação atual.
+
+-Para cada tempo um mapa é criado, se for necessário visualizar toda a simulação seria somente retornar os mapas ordenados por tempo.
+
+Qualquer dúvida por favor entre em contato! :-)
+
+
+

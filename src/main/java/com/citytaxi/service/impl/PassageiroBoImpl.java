@@ -52,7 +52,7 @@ public class PassageiroBoImpl implements PassageiroBo{
 				Mapa novoMapa = new Mapa(mapaCidade, passageiro.getTempo());
 				mapa = mapaBo.create(novoMapa);
 			}catch(IOException e) {
-				throw new MapNotFoundException("Mapa não encontrado", e);
+				throw new MapNotFoundException("Mapa n√£o encontrado", e);
 			}
 		}
 		Local[][] locais = mapa.getLocais();

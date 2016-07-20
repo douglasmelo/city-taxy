@@ -37,7 +37,7 @@ public class SimulacaoBoImpl implements SimulacaoBo{
 		map.setLocais(atualizarLocais(map.getLocais(), map.getTempo()));
 		Mapa novoMapa = mapaBo.create(map);
 		
-		//Vai até o passageiro
+		//Vai at√© o passageiro
 		List<Taxista> taxistaNoCaminho = taxistaBo.findAllByStatus(TaxiStatus.noCaminho);
 		List<Taxista> taxistaCheio = taxistaBo.findAllByStatus(TaxiStatus.cheio);
 		
@@ -45,16 +45,10 @@ public class SimulacaoBoImpl implements SimulacaoBo{
 			novoMapa = buscarPassageiro(taxista, novoMapa);
 		}
 		
-		//Está levando o passageiro ao destino
+		//Est√° levando o passageiro ao destino
 		for(Taxista taxista: taxistaCheio) {
 			novoMapa = levarPassageiro(taxista, novoMapa);
 		}
-		
-		//O taxista deve percorrer o melhor caminho até seu passageiro e o destino do passageiro após pegá-lo;
-//		procurar taxista a caminho e avançar até o passageiro, quando chegar mudar o status para 3.
-//		procurar taxista a cheio e avançar até o destino, quando chegar deletar passageiro da base e do taxista,
-		//e voltar o status do taxi para 1.
-		
 		
 		return novoMapa;
 	}
