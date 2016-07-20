@@ -5,3 +5,5 @@
 .classpath
 .DS_Store
 target
+.settings/*
+!.settings/.jsdtscope
